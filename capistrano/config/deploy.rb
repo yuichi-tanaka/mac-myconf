@@ -27,14 +27,6 @@ set :init_files, %W(
   #{File.join('docroot', 'index.php')}
 )
 
-#require 'pathname'
-# role毎の設定をload
-#option_dir = File.dirname(File.dirname(File.dirname(Pathname.new(__FILE__)))) + "/options"
-#option_dir = "../../options"
-#if (File.exists?("#{option_dir}/#{ENV['ROLES']}.rb")) then
-#  load "#{option_dir}/web.rb"
-#end
-
 task :xxx do
   run "uname -a"
 end
@@ -79,17 +71,6 @@ namespace :deploy do
       run "if [ -f #{init_file_path} ] ; then sed -i -e s\"/define('ENVIRONMENT', 'production')/define('ENVIRONMENT', '#{deploy_env}')/\" #{init_file_path}; fi"
       run "if [ -f #{init_file_path} ] ; then grep \"define('ENVIRONMENT'\" #{init_file_path}; fi"
     end
-
-    #if ! exists? :init_files
-      #init_files = [File.join(current_release, "docroot", "index.php")]
-    #  init_files = [File.join("docroot", "index.php")]
-    #end
-
-   # init_files.each do |init_file|
-   #   init_file_path = File.join(current_release, init_file)
-   #   run "sed -i -e s\"/define('ENVIRONMENT', 'production')/define('ENVIRONMENT', '#{deploy_env}')/\" #{init_file_path}"
-   #   run "grep \"define('ENVIRONMENT'\" #{init_file_path}"
-   # end
   end
 
   #logsディレクトリの所有者変更
@@ -128,13 +109,18 @@ namespace :deploy do
   end
 end
 
-# フック設定
-# deploy後に環境毎の設定値を変える
+# hooks
+# deploy後に環境毎の設定に書き換え
 after "deploy:finalize_update", "deploy:setenv"
+
+# 時々手動で実行するってのもアレなので毎回実行
+after "deploy:finalize_update", "deploy:cleanup"
+
 # logsディレクトリの所有者をapache実行ユーザに
 #after "deploy:finalize_update", "deploy:chown_logs_dir"
 
 # deploy後に、httpd reloadを行う
-#after "deploy:update", "deploy:reload"
+after "deploy:update", "deploy:reload"
+
 # rollback後に、httpd reloadを行う
-#after "deploy:rollback", "deploy:reload"
+after "deploy:rollback", "deploy:reload"
