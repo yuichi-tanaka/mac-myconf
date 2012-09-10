@@ -7,10 +7,6 @@ set :checkout, "export"
 
 set :scm, :subversion
 set :use_sudo, false
-# TODO アカウントをどうにかする
-set :scm_user, "koyama_jun"
-set :scm_password, "4t7GUJXh"
-set :repository,  "http://172.17.127.150/svn/repos/petpic/trunk/src"
 
 set :keep_releases, 5
 set :use_sudo_setup, true
