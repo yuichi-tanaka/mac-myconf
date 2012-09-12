@@ -8,7 +8,7 @@ set :checkout, "export"
 set :scm, :subversion
 set :use_sudo, false
 
-set :keep_releases, 5
+set :keep_releases, 10
 set :use_sudo_setup, true
 
 set :default_stage, "dev"
@@ -18,9 +18,11 @@ default_run_options[:pty] = true
 
 # index.phpへのパスを定義
 set :init_files, %W(
-  #{File.join('docroot', 'social', 'index.php')}
-  #{File.join('docroot', 'web', 'index.php')}
-  #{File.join('docroot', 'index.php')}
+  #{File.join('web', 'docroot', 'social', 'index.php')}
+  #{File.join('web', 'docroot', 'web', 'index.php')}
+  #{File.join('web', 'docroot', 'index.php')}
+  #{File.join('manager', 'docroot', 'index.php')}
+  #{File.join('batch', 'docroot', 'index.php')}
 )
 
 task :xxx do
