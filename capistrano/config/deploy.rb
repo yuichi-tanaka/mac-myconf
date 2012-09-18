@@ -66,7 +66,7 @@ namespace :deploy do
   task :setenv do
     init_files.each do |file|
       init_file_path = File.join(current_release, file)
-      run "if [ -f #{init_file_path} ] ; then sed -i -e s\"/define('ENVIRONMENT', 'production')/define('ENVIRONMENT', '#{deploy_env}')/\" #{init_file_path}; fi"
+      run "if [ -f #{init_file_path} ] ; then sed -i -e s\"/define('ENVIRONMENT', '.*')/define('ENVIRONMENT', '#{deploy_env}')/\" #{init_file_path}; fi"
       run "if [ -f #{init_file_path} ] ; then grep \"define('ENVIRONMENT'\" #{init_file_path}; fi"
     end
   end
