@@ -1,12 +1,15 @@
 set :deploy_env, "production"
 set :user, "deploy_petp_p"
 
-# 通常時の構成
+# 全台を対象
 role :web, "10.5.5.110" # manage
 role :web, "10.5.5.111" # batch
 role :web, "10.5.5.112" # ap01
 role :web, "10.5.5.113" # ap02
 role :web, "10.5.5.130" # ap03
+role :web, "10.5.5.131" # ap04
+role :web, "10.5.5.132" # ap05
+role :web, "10.5.5.133" # ap06
 
 # 最新のTagをデプロイ
 set :repository_root,  "http://172.17.127.150/svn/repos/petpic/tags/server"
