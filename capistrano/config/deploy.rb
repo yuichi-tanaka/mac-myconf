@@ -42,6 +42,19 @@ namespace :deploy do
     sudo "/etc/init.d/httpd reload"
   end
 
+  # svc(daemontools) restart
+  desc "daemontools process restart for MQ server"
+  task :service_reload do
+    run "if [ -d /service ] ; then sudo /usr/local/bin/svc -t /service/*; fi"
+  end
+
+  desc "daemontools service deploy for MQ server"
+  task :service_deploy do
+    run "if [ -d /service ] ; then sudo /bin/cp -Rf #{current_release}/web/service/#{deploy_env}/* /service/; fi"
+    run "if [ -d /service ] ; then sudo chmod +x /service/**/run /service/**/**/run; fi"
+  end
+
+  # TODO /var/log/petpic, /serviceも追加する
   #/var/www以下に作成できるように管理者権限でつくったあとに権限をゆるめる
   task :setup do
     dirs = [deploy_to, releases_path]
@@ -114,6 +127,10 @@ after "deploy:finalize_update", "deploy:setenv"
 # 時々手動で実行するってのもアレなので毎回実行
 after "deploy:finalize_update", "deploy:cleanup"
 
+# /serviceに対して上書きでデプロイ
+after "deploy:finalize_update", "deploy:service_deploy"
+after "deploy:finalize_update", "deploy:service_reload"
+
 # logsディレクトリの所有者をapache実行ユーザに
 #after "deploy:finalize_update", "deploy:chown_logs_dir"
 
@@ -122,3 +139,4 @@ after "deploy:update", "deploy:reload"
 
 # rollback後に、httpd reloadを行う
 after "deploy:rollback", "deploy:reload"
+
