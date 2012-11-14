@@ -128,8 +128,8 @@ after "deploy:finalize_update", "deploy:setenv"
 after "deploy:finalize_update", "deploy:cleanup"
 
 # /serviceに対して上書きでデプロイ
-after "deploy:finalize_update", "deploy:service_deploy"
-after "deploy:finalize_update", "deploy:service_reload"
+after "deploy:reload", "deploy:service_deploy"
+after "deploy:reload", "deploy:service_reload"
 
 # logsディレクトリの所有者をapache実行ユーザに
 #after "deploy:finalize_update", "deploy:chown_logs_dir"

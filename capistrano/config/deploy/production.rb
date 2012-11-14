@@ -7,6 +7,8 @@ role :web, "10.5.5.111" # batch
 role :web, "10.5.5.112" # ap01
 role :web, "10.5.5.113" # ap02
 role :web, "10.5.5.130" # ap03
+role :web, "10.5.5.116" # mq01
+role :web, "10.5.5.117" # mq02
 
 # 最新のTagをデプロイ
 set :repository_root,  "http://172.17.127.150/svn/repos/petpic/tags/server"
