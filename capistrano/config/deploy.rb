@@ -5,6 +5,7 @@ set :copy_exclude, [".svn", "DS_Store"]
 set :copy_strategy, :export
 set :checkout, "export"
 
+#set :scm, :subversion
 set :scm, :subversion
 set :use_sudo, false
 
@@ -40,6 +41,12 @@ namespace :deploy do
   # http reload
   task :reload do
     sudo "/etc/init.d/httpd reload"
+  end
+
+  # update crontab
+  desc "update crontab for bat01[prod|staging]"
+  task :crontab_deploy do
+    run "if [ `hostname -s` = 'bat01' ] ; then crontab /var/www/petpic/current/crontab; fi"
   end
 
   # svc(daemontools) restart
@@ -129,7 +136,8 @@ after "deploy:finalize_update", "deploy:cleanup"
 
 # /serviceに対して上書きでデプロイ
 after "deploy:reload", "deploy:service_deploy"
-after "deploy:reload", "deploy:service_reload"
+after "deploy:service_deploy", "deploy:service_reload"
+after "deploy:reload", "deploy:crontab_deploy"
 
 # logsディレクトリの所有者をapache実行ユーザに
 #after "deploy:finalize_update", "deploy:chown_logs_dir"
