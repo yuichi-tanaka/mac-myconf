@@ -5,15 +5,18 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 " git
-Bundle 'altercation/vim-colors-solarized'
+Bundle 'Shougo/vimshell.git'
+Bundle 'Shougo/vimproc.git'
 
 " vim-scripts
 Bundle 'taglist.vim'
 Bundle 'unite.vim'
 Bundle 'surround.vim'
+Bundle 'YankRing.vim'
 "Bundle 'project.vim'
 " other
 Bundle 'The-NERD-Commenter'
+Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 
