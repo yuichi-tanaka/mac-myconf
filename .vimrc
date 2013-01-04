@@ -44,9 +44,19 @@ if filereadable(expand('~/.solarized.vimrc'))
 endif
 
 
+""""""""標準設定用
+if filereadable(expand('~/.basic.vimrc'))
+	:source ~/.basic.vimrc
+endif
+
+"""""""ショートカット用
+if filereadable(expand('~/.shortcat.vimrc'))
+	:source ~/.shortcat.vimrc
+endif
+
+"""""""オート用
+if filereadable(expand('~/.autocmd.vimrc'))
+	:source ~/.autocmd.vimrc
+endif
 
 
-
-nnoremap rrp :Project<CR>
-nnoremap vsh :VimShell<CR>
-autocmd BufWritePre * :%s/\s\+$//ge
