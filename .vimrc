@@ -7,7 +7,7 @@ Bundle 'gmarik/vundle'
 " git
 Bundle 'Shougo/vimshell.git'
 Bundle 'Shougo/vimproc.git'
-Bundle 'tpope/vim-fugitive.git'
+"Bundle 'tpope/vim-fugitive.git'
 
 " vim-scripts
 Bundle 'taglist.vim'
