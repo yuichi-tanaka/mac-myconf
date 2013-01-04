@@ -1,2 +1,5 @@
-#.vimの配下は無視
+#.vim/bundleの配下は無視
 .vim/bundle/
+env.vim
+files.list
+tags
