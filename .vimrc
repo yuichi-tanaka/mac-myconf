@@ -42,24 +42,10 @@ endif
 if filereadable(expand('~/.solarized.vimrc'))
 	:source ~/.solarized.vimrc
 endif
-""""""""""""""クリップボード
-set clipboard=unnamed,autoselect
 
 
 
 
-""""""test
-set number
-set showmode
-set title
-set showcmd
-set showmatch
-set nobackup
-set autoread
-set textwidth=0
-set scrolloff=5
-set vb t_vb=
-set noswapfile
 
 nnoremap rrp :Project<CR>
 nnoremap vsh :VimShell<CR>
