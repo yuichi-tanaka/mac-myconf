@@ -44,3 +44,16 @@ if filereadable(expand('~/.solarized.vimrc'))
 endif
 """"""""""""""クリップボード
 set clipboard=unnamed,autoselect
+
+
+
+
+""""""test
+set number
+set showmode
+set title
+set showcmd
+set showmatch
+
+nnoremap rrp :Project<CR>
+autocmd BufWritePre * :%s/\s\+$//ge
