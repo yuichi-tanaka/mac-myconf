@@ -11,7 +11,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'taglist.vim'
 Bundle 'unite.vim'
 Bundle 'surround.vim'
-Bundle 'project.vim'
+"Bundle 'project.vim'
 " other
 Bundle 'The-NERD-Commenter'
 
