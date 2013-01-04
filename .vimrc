@@ -13,7 +13,6 @@ Bundle 'taglist.vim'
 Bundle 'unite.vim'
 Bundle 'surround.vim'
 Bundle 'YankRing.vim'
-"Bundle 'project.vim'
 " other
 Bundle 'The-NERD-Commenter'
 Bundle 'altercation/vim-colors-solarized'
