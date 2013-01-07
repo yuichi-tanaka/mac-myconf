@@ -7,6 +7,7 @@ Bundle 'gmarik/vundle'
 " git
 Bundle 'Shougo/vimshell.git'
 Bundle 'Shougo/vimproc.git'
+"Bundle 'vim-scripts/Conque-Shell.git'
 "Bundle 'tpope/vim-fugitive.git'
 
 " vim-scripts
@@ -60,3 +61,5 @@ if filereadable(expand('~/.autocmd.vimrc'))
 endif
 
 
+":botright vs
+":new
