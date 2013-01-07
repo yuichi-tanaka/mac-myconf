@@ -1,5 +1,5 @@
 " Projectへのショートカット
-nnoremap rrp :Project<CR>
+" nnoremap rrp :Project<CR>
 " VimShellへのショートカット
-nnoremap vsh :VimShell<CR>
+" nnoremap vsh :VimShell<CR>
 
