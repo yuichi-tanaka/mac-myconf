@@ -5,4 +5,4 @@ alias vim='/opt/local/bin/vim'
 alias vi='/opt/local/bin/vim'
 
 #tmux起動
-tmux
+#tmux

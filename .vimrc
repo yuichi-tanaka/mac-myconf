@@ -18,8 +18,10 @@ Bundle 'YankRing.vim'
 " other
 Bundle 'The-NERD-Commenter'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'JavaScript-syntax'
+Bundle 'pangloss/vim-javascript'
 
-filetype plugin indent on
+
 
 
 
@@ -41,7 +43,7 @@ endif
 
 """"""""Solarized用
 if filereadable(expand('~/.solarized.vimrc'))
-	:source ~/.solarized.vimrc
+	"	:source ~/.solarized.vimrc
 endif
 
 
