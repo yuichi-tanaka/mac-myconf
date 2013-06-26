@@ -1,4 +1,4 @@
-export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin/:$HOME/bin:$PATH
 export MANPATH=/opt/local/man:$MANPATH
 
 alias vim='/opt/local/bin/vim'
@@ -74,3 +74,10 @@ alias dev_mitaka_stat1='ssh tanaka_yuichi@10.34.73.110'
 
 #tmux起動
 #tmux
+
+
+#piggアイランド用nvm起動
+source ~/.nvm/nvm.sh
+npm_dir=${NVM_PATH}_modules
+export NODE_PATH=$NODE_PATH:$npm_dir
+nvm use v0.8.19 > /dev/null
