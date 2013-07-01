@@ -81,3 +81,6 @@ source ~/.nvm/nvm.sh
 npm_dir=${NVM_PATH}_modules
 export NODE_PATH=$NODE_PATH:$npm_dir
 nvm use v0.8.19 > /dev/null
+
+
+alias prv_dev='ssh tanaka_yuichi@10.200.48.208'

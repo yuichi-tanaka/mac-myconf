@@ -3,8 +3,6 @@
 "set number
 """"""""""""""Vi互換をオフ
 set nocompatible
-""""""""""""""file type indent
-filetype indent plugin on
 """"""""""""""syntax on
 syntax on
 """"""""""""""バッファ
