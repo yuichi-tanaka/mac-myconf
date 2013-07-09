@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/A12473/.vim'
+let g:netrw_dirhist_2='/Users/A12473/.vim/plugin'
+let g:netrw_dirhist_3='/Users/A12473/.vim'
+let g:netrw_dirhist_4='/Users/A12473/.vim/vundle.git'
+let g:netrw_dirhist_5='/Users/A12473/.vim'
+let g:netrw_dirhist_6='/Users/A12473'

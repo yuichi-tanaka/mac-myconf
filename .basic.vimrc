@@ -3,8 +3,6 @@
 "set number
 """"""""""""""Vi互換をオフ
 set nocompatible
-""""""""""""""file type indent
-filetype indent plugin on
 """"""""""""""syntax on
 syntax on
 """"""""""""""バッファ
@@ -43,7 +41,7 @@ set vb t_vb=
 set noswapfile
 
 """"""""""""""クリップボード
-set clipboard=unnamed,autoselect
+set clipboard+=unnamed,autoselect
 
 
 """"""""""""""タブ２
@@ -54,3 +52,11 @@ set tabstop=2
 "set shiftwidth=2
 "set softtabstop=2
 "set expandtab
+"
+
+"key-bind
+nnoremap <C-j> <Nop>
+nnoremap <C-]> g<C-]>
+nnoremap <C-j><C-j> :<C-u>tag<CR>
+nnoremap <C-j><C-k> :<C-u>pop<CR>
+nnoremap <C-j><C-l> :<C-u>tags<CR>

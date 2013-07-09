@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 " git
-Bundle 'Shougo/vimshell.git'
+"Bundle 'Shougo/vimshell.git'
 Bundle 'Shougo/vimproc.git'
 Bundle 'Lokaltog/vim-powerline'
 "Bundle 'vim-scripts/Conque-Shell.git'
@@ -44,14 +44,10 @@ endif
 
 """"""""Solarized用
 if filereadable(expand('~/.solarized.vimrc'))
-	"	:source ~/.solarized.vimrc
+		:source ~/.solarized.vimrc
 endif
 
 
-""""""""標準設定用
-if filereadable(expand('~/.basic.vimrc'))
-	:source ~/.basic.vimrc
-endif
 
 """""""ショートカット用
 if filereadable(expand('~/.shortcat.vimrc'))
@@ -62,7 +58,11 @@ endif
 if filereadable(expand('~/.autocmd.vimrc'))
 	:source ~/.autocmd.vimrc
 endif
+""""""""標準設定用
+if filereadable(expand('~/.basic.vimrc'))
+	:source ~/.basic.vimrc
+endif
 
-
+filetype plugin indent on
 ":botright vs
 ":new

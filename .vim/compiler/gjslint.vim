@@ -11,4 +11,4 @@ CompilerSet makeprg=gjslint\ %
 CompilerSet errorformat=
       \%+P-----\ FILE\ \ :\ \ %f\ -----,
       \Line\ %l\\,\ %t:%n:\ %m,
-      \%+Q%r
+      \%-Q
