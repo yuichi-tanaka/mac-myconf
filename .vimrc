@@ -7,6 +7,7 @@ Bundle 'gmarik/vundle'
 " git
 "Bundle 'Shougo/vimshell.git'
 Bundle 'Shougo/vimproc.git'
+Bundle 'scrooloose/syntastic.git'
 "Bundle 'vim-scripts/Conque-Shell.git'
 "Bundle 'tpope/vim-fugitive.git'
 
