@@ -37,6 +37,8 @@ NeoBundle 'scrooloose/syntastic.git'
 "NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'chochos/ceylon-vim.git'
 NeoBundle 'davidhalter/jedi-vim.git'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'mattn/gist-vim'
 ""Bundle 'vim-scripts/Conque-Shell.git'
 ""Bundle 'tpope/vim-fugitive.git'
 "
@@ -94,6 +96,9 @@ endif
 if filereadable(expand('~/.basic.vimrc'))
 	:source ~/.basic.vimrc
 endif
+
+let g:gist_curl_options = "-k"
+let g:gist_detect_filetype = 1
 
 filetype plugin indent on
 syntax on
