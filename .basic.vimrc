@@ -15,6 +15,7 @@ set hlsearch
 set backspace=indent,eol,start
 """"""""""""""オートインデント
 set autoindent
+set smartindent
 """"""""""""""ルーラー表示
 set ruler
 """"""""""""""ステータスを表示
@@ -45,14 +46,19 @@ set clipboard+=unnamed,autoselect
 
 
 """"""""""""""タブ２
-set shiftwidth=2
-set tabstop=2
+"set shiftwidth=2
+"set tabstop=2
 
 """"""""""""""スペース２
 "set shiftwidth=2
 "set softtabstop=2
 "set expandtab
 "
+"""""""""""""" python
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+set expandtab
 
 "key-bind
 nnoremap <C-j> <Nop>
@@ -60,3 +66,13 @@ nnoremap <C-]> g<C-]>
 nnoremap <C-j><C-j> :<C-u>tag<CR>
 nnoremap <C-j><C-k> :<C-u>pop<CR>
 nnoremap <C-j><C-l> :<C-u>tags<CR>
+
+
+""""""" syntasticの設定
+let g:syntastic_mode_map ={"mode" : "active" , "active_filetypes":["javascript","json"]}
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+"set encoding=utf-8
+"set guifont=Consolas\ for\ Powerline\ FixedD:h9
+"let g:Powerline_symbols="fancy"

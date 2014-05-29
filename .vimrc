@@ -1,27 +1,58 @@
-set nocompatible
-filetype off
+"set nocompatible
+"filetype off
+"
+"set rtp+=~/.vim/bundle/vundle/
+"call vundle#rc()
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-" git
-"Bundle 'Shougo/vimshell.git'
-Bundle 'Shougo/vimproc.git'
-Bundle 'scrooloose/syntastic.git'
-Bundle 'Lokaltog/vim-powerline'
-"Bundle 'vim-scripts/Conque-Shell.git'
-"Bundle 'tpope/vim-fugitive.git'
+"--------------------------------------------------------------------------
+"" neobundle
+set nocompatible               " Be iMproved
+filetype off                   " Required!
 
-" vim-scripts
-Bundle 'taglist.vim'
-Bundle 'unite.vim'
-Bundle 'surround.vim'
-Bundle 'YankRing.vim'
-" other
-Bundle 'The-NERD-Commenter'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'JavaScript-syntax'
-Bundle 'pangloss/vim-javascript'
+if has('vim_starting')
+	  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  endif
+
+  call neobundle#rc(expand('~/.vim/bundle/'))
+
+  filetype plugin indent on     " Required!
+
+  " Installation check.
+  if neobundle#exists_not_installed_bundles()
+	  echomsg 'Not installed bundles : ' .
+				  \ string(neobundle#get_not_installed_bundle_names())
+	  echomsg 'Please execute ":NeoBundleInstall" command.'
+	  "finish
+  endif
+  NeoBundle 'alpaca-tc/alpaca_powertabline'
+  NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
+  NeoBundle 'bling/vim-airline'
+
+
+  "NeoBundle 'gmarik/vundle'
+"" git
+""Bundle 'Shougo/vimshell.git'
+NeoBundle 'Shougo/vimproc.git'
+NeoBundle 'scrooloose/syntastic.git'
+"NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'chochos/ceylon-vim.git'
+NeoBundle 'davidhalter/jedi-vim.git'
+""Bundle 'vim-scripts/Conque-Shell.git'
+""Bundle 'tpope/vim-fugitive.git'
+"
+"" vim-scripts
+NeoBundle 'taglist.vim'
+NeoBundle 'unite.vim'
+NeoBundle 'surround.vim'
+NeoBundle 'YankRing.vim'
+NeoBundle 'Align'
+"" other
+NeoBundle 'The-NERD-Commenter'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'JavaScript-syntax'
+NeoBundle 'pangloss/vim-javascript'
+
+NeoBundle 'nathanaelkane/vim-indent-guides.git'
 
 
 
@@ -65,5 +96,7 @@ if filereadable(expand('~/.basic.vimrc'))
 endif
 
 filetype plugin indent on
+syntax on
+
 ":botright vs
 ":new

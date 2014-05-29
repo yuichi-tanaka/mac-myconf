@@ -3,8 +3,8 @@ if exists("current_compiler")
 endif
 let current_compiler = "gjslint"
 
-if exists(":CompilerSet") !=2
-	command -nargs=* CompilerSet setlocal
+if exists(":CompilerSet") != 2 " older Vim always used :setlocal
+	    command -nargs=* CompilerSet setlocal
 endif
 
 CompilerSet makeprg=gjslint\ %
