@@ -1,8 +1,10 @@
 set nocompatible
 filetype plugin indent on
 
-set runtimepath+=/Users/yuichi/.vim/bundle/neobundle.vim/
-call neobundle#begin(expand('/Users/yuichi/.vim/bundle'))
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+call neobundle#begin(expand('~/.vim/bundle'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
@@ -34,6 +36,10 @@ NeoBundle 'JavaScript-syntax'
 NeoBundle 'pangloss/vim-javascript'
 ""
 NeoBundle 'nathanaelkane/vim-indent-guides.git'
+NeoBundle 'fatih/vim-go'
+
+
+
 ""
 ""
 ""
@@ -84,5 +90,6 @@ syntax on
 ""
 """:botright vs
 """:new
+NeoBundleCheck
 
 call neobundle#end()
